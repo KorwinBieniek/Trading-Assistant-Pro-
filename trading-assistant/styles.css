@@ -1,0 +1,56 @@
+:root {
+    /* Core theme colors - used throughout the app */
+    --primary-color: #2196F3;
+    --success-color: #4CAF50;
+    --danger-color: #f44336;
+    --border-color: #e0e0e0;
+    --background-color: #f5f5f5;
+    --card-background: #ffffff;
+    --text-primary: #333333;
+    /* Consistent spacing variables for maintainable layouts */
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 12px;
+    --spacing-lg: 16px;
+}
+
+/* Base styles for better readability and consistency */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    margin: 0;
+    padding: var(--spacing-sm);
+    width: 800px;
+    background-color: var(--background-color);
+    color: var(--text-primary);
+}
+
+/* Dark mode overrides - crucial for night trading */
+.dark-mode {
+    --primary-color: #90caf9;
+    --success-color: #81c784;
+    --danger-color: #e57373;
+    --border-color: #424242;
+    --background-color: #121212;
+    --card-background: #1e1e1e;
+    --text-primary: #e0e0e0;
+}
+
+/* Market cards grid layout - keeps everything organized */
+#markets {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xs);
+}
+
+/* Responsive font sizes - added after user feedback */
+.font-small {
+    font-size: 12px;
+}
+
+.font-medium {
+    font-size: 16px;
+}
+
+.font-large {
+    font-size: 20px;
+}

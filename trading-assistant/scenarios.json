@@ -1,0 +1,186 @@
+{
+  "version": "1.0",
+  "scenarios": {
+    "TestScenario": {
+      "name": "Scenariusz Głowny",
+      "conditions": {
+        "demandFormation": {
+          "type": "select",
+          "label": "Formacja popytowa (VSA)",
+          "description": "Analiza formacji popytowej na rynku.",
+          "required": true,
+          "options": [
+            {
+              "value": "20",
+              "label": "Bardzo silna",
+              "weight": 20
+            },
+            {
+              "value": "10",
+              "label": "Średnia",
+              "weight": 10
+            },
+            {
+              "value": "0",
+              "label": "Brak",
+              "weight": 0
+            }
+          ]
+        },
+        "background": {
+          "type": "select",
+          "label": "TŁO",
+          "description": "Ocena otoczenia rynkowego.",
+          "required": true,
+          "options": [
+            {
+              "value": "20",
+              "label": "Silne tło",
+              "weight": 20
+            },
+            {
+              "value": "10",
+              "label": "Neutralne tło",
+              "weight": 10
+            },
+            {
+              "value": "0",
+              "label": "Słabe tło",
+              "weight": 0
+            }
+          ]
+        },
+        "breakoutDirection": {
+          "type": "select",
+          "label": "Kierunek wybicia",
+          "description": "Określenie kierunku wybicia.",
+          "required": true,
+          "options": [
+            {
+              "value": "up",
+              "label": "Górą",
+              "weight": 20
+            },
+            {
+              "value": "down",
+              "label": "Dołem",
+              "weight": 0
+            }
+          ]
+        },
+        "correction": {
+          "type": "select",
+          "label": "Korekta",
+          "description": "Czy nastąpiła korekta?",
+          "required": false,
+          "options": [
+            {
+              "value": "yes",
+              "label": "Tak",
+              "weight": 10
+            },
+            {
+              "value": "no",
+              "label": "Nie",
+              "weight": 0
+            }
+          ]
+        },
+        "confirmationImpulse": {
+          "type": "select",
+          "label": "Potwierdzenie/IMPULS",
+          "description": "Czy wystąpił impuls potwierdzający wybicie?",
+          "required": false,
+          "options": [
+            {
+              "value": "20",
+              "label": "Silne potwierdzenie",
+              "weight": 20
+            },
+            {
+              "value": "10",
+              "label": "Umiarkowane potwierdzenie",
+              "weight": 10
+            },
+            {
+              "value": "0",
+              "label": "Brak potwierdzenia",
+              "weight": 0
+            }
+          ]
+        }
+      },
+      "outputs": {
+        "veryStrongMovement": {
+          "threshold": 80,
+          "message": "Bardzo silny sygnał - rynek ma wysoką pewność ruchu",
+          "type": "bullish"
+        },
+        "strongMovement": {
+          "threshold": 60,
+          "message": "Silny sygnał - wysoka pewność ruchu",
+          "type": "bullish"
+        },
+        "moderateMovement": {
+          "threshold": 40,
+          "message": "Umiarkowany sygnał - rynek jest w połowie drogi",
+          "type": "neutral"
+        },
+        "weakMovement": {
+          "threshold": 20,
+          "message": "Słaby sygnał - niski poziom pewności",
+          "type": "bearish"
+        },
+        "noMovement": {
+          "threshold": 0,
+          "message": "Brak wyraźnego ruchu - rynek bez kierunku",
+          "type": "neutral"
+        }
+      }
+    },
+    "scenario_1736080395247": {
+      "name": "Nowy Scenariusz",
+      "conditions": {
+        "condition_1736080397373": {
+          "label": "Nowy Warunek",
+          "weight": 0,
+          "type": "select",
+          "options": [
+            {
+              "value": "test",
+              "label": "Nowa opcja",
+              "weight": 5
+            },
+            {
+              "value": "test",
+              "label": "Nowa opcja",
+              "weight": 0
+            }
+          ]
+        }
+      },
+      "outputs": {
+        "output_1736080406390": {
+          "threshold": 5,
+          "message": "Nowe Wyjście"
+        }
+      }
+    },
+    "scenario_1736082965258": {
+      "name": "test",
+      "conditions": {
+        "condition_1736082968309": {
+          "label": "Nowy Warunek",
+          "weight": 0,
+          "type": "text"
+        }
+      },
+      "outputs": {
+        "output_1736082969228": {
+          "threshold": 0,
+          "message": "Nowe Wyjście"
+        }
+      }
+    }
+  }
+}

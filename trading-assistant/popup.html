@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Trading Assistant Pro</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h3>Trading Assistant Pro</h3>
+    <!-- Scenarios edit button - needs to be always visible and easily accessible -->
+    <div class="header-actions">
+      <button id="editScenarios" class="edit-button">Edytuj scenariusze</button>
+    </div>
+    <div class="time-display" id="currentTime"></div>
+    
+    <!-- Settings panel - added because values were hard to read on light background -->
+    <div class="settings">
+        <label for="fontSizeSelect">Rozmiar czcionki:</label>
+        <select id="fontSizeSelect">
+          <option value="small">Mały</option>
+          <option value="medium" selected>Średni</option>
+          <option value="large">Duży</option>
+        </select>
+        <label for="darkModeToggle">
+          <input type="checkbox" id="darkModeToggle">
+          Dark Mode
+        </label>
+      </div>
+      
+    
+    <!-- Markets grid - using compact-grid to fit everything on one screen -->
+    <div id="markets" class="markets-grid compact-grid">
+        <!-- Gold - first market since it's most frequently used -->
+        <div class="market-card compact" id="gold-container">
+            <h4>Złoto</h4>
+            <label for="gold-scenario-select">Scenariusz:</label>
+            <select id="gold-scenario-select" class="scenario-select small-input">
+                <option value="">Brak przypisania</option>
+            </select>
+            <!-- Conditions will be loaded here dynamically from the scenario -->
+            <div id="gold-conditions" class="conditions">
+            </div>
+        </div>
+
+        <!-- Similar structure for Oil and DJ -->
+        <div class="market-card compact" id="oil-container">
+            <h4>Ropa</h4>
+            <label for="oil-scenario-select">Scenariusz:</label>
+            <select id="oil-scenario-select" class="scenario-select small-input">
+                <option value="">Brak przypisania</option>
+            </select>
+            <div id="oil-conditions" class="conditions">
+                <!-- Conditions -->
+            </div>
+        </div>
+        <div class="market-card compact" id="dj-container">
+            <h4>Dow Jones</h4>
+            <label for="dj-scenario-select">Scenariusz:</label>
+            <select id="dj-scenario-select" class="scenario-select small-input">
+                <option value="">Brak przypisania</option>
+            </select>
+            <div id="dj-conditions" class="conditions">
+                <!-- Conditions -->
+            </div>
+        </div>
+    </div>
+
+    <button id="predict" class="predict-button">Analizuj</button>
+    <div id="prediction" class="prediction"></div>
+    <button id="save" class="save-button">Zapisz analizę</button>
+  </div>
+
+  <!-- Scenarios editor modal - hidden by default to avoid interference -->
+  <div id="scenarioModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4>Edytor Scenariuszy</h4>
+        <button class="close-modal">&times;</button>
+      </div>
+      <div id="scenarioEditor"></div>
+    </div>
+  </div>
+
+  <!-- Scripts must be in this order - manager first, then editor, main popup last -->
+  <script src="scenario-manager.js"></script>
+  <script src="scenario-editor.js"></script>
+  <script src="popup.js"></script>
+
+</body>
+</html>
